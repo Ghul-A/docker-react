@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+   - docker build -t ghulasghar/docker-react -f Docker.dev . 
+
+
+script:
+  - docker run ghulasghar/docker-react npm run test -- -- coverage
+  
