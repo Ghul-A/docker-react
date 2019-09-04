@@ -7,5 +7,4 @@ before_install:
 
 
 script:
-  - docker run ghulasghar/docker-react npm run test -- -- coverage
-  
+  - docker run -e CI=true ghulasghar/docker-react npm run test 
