@@ -3,22 +3,23 @@ services:
   - docker
 
 before_install:
-   - docker build -t ghulasghar/docker-react -f Dockerfile.dev . 
+   - docker build -t Ghul-A/docker-react -f Dockerfile.dev . 
+  
 
 
 script:
-  - docker run -e CI=true ghulasghar/docker-react npm run test 
+  - docker run -e CI=true Ghul-A/docker-react npm run test 
 
-  deploy: 
-    provider: elasticbeanstalk
-    region: "eu-west-2"
-    app: "docker-react"
-    env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-eu-west-2-569561415734"
-    bucket_path: "docker-react"
-    on:
-       branch: master
-  access_key_id:
-    secure: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  #deploy: 
+   # provider: elasticbeanstalk
+    #region: "eu-west-2"
+    #app: "docker-react"
+    #env: "DockerReact-env"
+    #bucket_name: "elasticbeanstalk-eu-west-2-569561415734"
+    #bucket_path: "docker-react"
+   # on:
+    #   branch: master
+  #access_key_id:
+   # secure: $AWS_ACCESS_KEY
+  #secret_access_key:
+   # secure: "$AWS_SECRET_KEY"
